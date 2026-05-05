@@ -7,6 +7,12 @@ const port = 6127;
 const app = express();
 app.use(express.json());
 
+const cors = require('cors');
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
